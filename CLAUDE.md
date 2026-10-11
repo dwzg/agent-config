@@ -23,6 +23,10 @@ plugins/<plugin>/
 - **No `version` field**, in either `plugin.json` or `marketplace.json`. Installs then track commits, so a push is a release. `claude plugin validate` warns about this; the warning is expected.
 - Add the plugin to the table in `README.md`.
 
+## Committing
+
+Commit straight to `main` and push. No branch or pull request is needed; CI validates every push to `main`. This holds only for this repository and `dwzg/agent-config-private`. Changes to `dwzg/homepage` always go through a pull request.
+
 ## Never commit
 
 This repository is public. Keep out of it: secrets, tokens, webhook URLs, hostnames or IPs from the home network, and anything that locates the weather station. That kind of content belongs in `agent-config-private`, or nowhere.
