@@ -52,15 +52,17 @@ The other way to ask is through Claude Code wrapped around the server, as in [cl
 
 7. **Passing the checker is its own category.** Model-written code that passes its tests has been read by nobody. Keep it apart from reviewed work in every count and report, and decide in advance what it needs before it replaces anything: in that run, no surviving mutation, which 11 of the 37 met.
 
-8. **Keep what was accepted but not used.** Accepted answers that failed the stricter bar were hours of GPU time and good reading material. They lived in an untracked build directory until someone noticed.
+8. **Have a reader go over a sample of what the checker accepted, and turn each finding into a check.** A review agent read 32 accepted functions against the original. 26 were the same. Four loaded or stored a memory location a different number of times, which the tests did not compare; they do now. One could not reproduce a fault of the original that nobody had noticed, a copy one byte past a buffer, and a scan for that shape found three more functions with it. The checker defines what "right" means, and a reader is how you find out what it left out.
 
-9. **Never let a model's unchecked claim into a record.** Print it, read the evidence it names, and write the conclusion down as your own.
+9. **Keep what was accepted but not used.** Accepted answers that failed the stricter bar were hours of GPU time and good reading material. They lived in an untracked build directory until someone noticed.
 
-10. **Bulk CPU work has to leave the model room.** A test run on all hardware threads cut the model from 82 to 55 tokens a second, although the model computes on the GPU and the run had the lowest priority. Keeping the run off two physical cores brought it back to 76. [polite.py](polite.py) does both: `python3 polite.py make test`.
+10. **Never let a model's unchecked claim into a record.** Print it, read the evidence it names, and write the conclusion down as your own.
 
-11. **Measure speed over whole answers.** Samples of a token counter every few seconds fell between requests and showed anything from 35 to 74. `ask_and_check.py` writes the server's own figure for each answer to `rate.tsv`; tune the sharing from that.
+11. **Bulk CPU work has to leave the model room.** A test run on all hardware threads cut the model from 82 to 55 tokens a second, although the model computes on the GPU and the run had the lowest priority. Keeping the run off two physical cores brought it back to 76. [polite.py](polite.py) does both: `python3 polite.py make test`.
 
-12. **Stop a queue in a command of its own.** `pkill -f pattern` also matches the shell that runs it when the pattern appears anywhere in that command line. Three times it killed the edits that followed it.
+12. **Measure speed over whole answers.** Samples of a token counter every few seconds fell between requests and showed anything from 35 to 74. `ask_and_check.py` writes the server's own figure for each answer to `rate.tsv`; tune the sharing from that.
+
+13. **Stop a queue in a command of its own.** `pkill -f pattern` also matches the shell that runs it when the pattern appears anywhere in that command line. Three times it killed the edits that followed it.
 
 ## 4. What to tell the user
 
