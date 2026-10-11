@@ -10,6 +10,11 @@
       "name": "homelab-deploy",
       "source": "./plugins/homelab-deploy",
       "description": "Deploy a Dockerised project to a self-hosted Portainer from GitHub Actions via GHCR, with the pitfalls already fixed."
+    },
+    {
+      "name": "local-model-tandem",
+      "source": "./plugins/local-model-tandem",
+      "description": "Hand bulk work to a local model and let a program, not trust, decide which answers are kept."
     }
   ]
 }

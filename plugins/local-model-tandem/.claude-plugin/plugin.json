@@ -1,0 +1,11 @@
+{
+  "name": "local-model-tandem",
+  "description": "Hand bulk work to a local model and let a program, not trust, decide which answers are kept.",
+  "author": {
+    "name": "Dennis Witzig",
+    "url": "https://github.com/dwzg"
+  },
+  "repository": "https://github.com/dwzg/agent-config",
+  "license": "MIT",
+  "keywords": ["local-model", "llama-server", "ollama", "delegation", "verification"]
+}
