@@ -1,0 +1,15 @@
+{
+  "name": "agent-config",
+  "description": "Skills, agents and other things for AI coding, from Dennis Witzig's own projects.",
+  "owner": {
+    "name": "Dennis Witzig",
+    "url": "https://github.com/dwzg"
+  },
+  "plugins": [
+    {
+      "name": "homelab-deploy",
+      "source": "./plugins/homelab-deploy",
+      "description": "Deploy a Dockerised project to a self-hosted Portainer from GitHub Actions via GHCR, with the pitfalls already fixed."
+    }
+  ]
+}

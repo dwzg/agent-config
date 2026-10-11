@@ -1,0 +1,11 @@
+{
+  "name": "homelab-deploy",
+  "description": "Deploy a Dockerised project to a self-hosted Portainer from GitHub Actions via GHCR, with the pitfalls already fixed.",
+  "author": {
+    "name": "Dennis Witzig",
+    "url": "https://github.com/dwzg"
+  },
+  "repository": "https://github.com/dwzg/agent-config",
+  "license": "MIT",
+  "keywords": ["docker", "ghcr", "portainer", "github-actions", "deploy"]
+}
