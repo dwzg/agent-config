@@ -27,6 +27,7 @@ To receive updates automatically, open `/plugin`, go to **Marketplaces**, select
 | Plugin | What it does |
 | --- | --- |
 | [`homelab-deploy`](plugins/homelab-deploy) | Builds a Docker image in GitHub Actions, pushes it to GHCR and redeploys it through a Portainer webhook. The skill `/homelab-deploy:ghcr-portainer` carries a ready workflow and the eight rules that keep it from breaking. |
+| [`local-model-tandem`](plugins/local-model-tandem) | Runs a queue of checkable tasks through a local model (llama-server, Ollama, LM Studio) while the session does other work. The skill `/local-model-tandem:delegate-checked-work` carries the loop, a wrapper that keeps CPU jobs from slowing the model, and the twelve rules that came out of one long run. |
 
 ## Not using Claude Code?
 
